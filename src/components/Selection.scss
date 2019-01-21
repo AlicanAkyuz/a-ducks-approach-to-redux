@@ -1,0 +1,25 @@
+.fetch {
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 50px;
+  margin-top: 150px;
+  color: #444;
+}
+.selection_holder {
+  display: flex;
+  margin-left: 30px;
+  margin-top: 15px;
+}
+.selection_holder h3 {
+  color: #444;
+  font-size: 25px;
+  font-family: Helvetica;
+}
+.selection_holder select {
+  width: 250px;
+  height: 40px;
+  margin-left: 15px;
+  margin-top: 20px;
+  font-size: 15px;
+  font-family: Helvetica;
+}

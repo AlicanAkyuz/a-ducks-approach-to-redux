@@ -1,0 +1,49 @@
+.data_holder {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-left: 40px;
+}
+.data {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  background-color: #f6f6f6;
+  border-radius: 15px;
+}
+.img {
+  width: 150px;
+  height: auto;
+  margin-right: 50px;
+}
+.data_text {
+  display: flex;
+  flex-direction: column;
+}
+.data_text div {
+  display: flex;
+  flex-direction: row;
+}
+.titles {
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 17px;
+  color: #444;
+}
+.data {
+  font-family: Helvetica;
+  font-size: 17px;
+  color: #444;
+}
+.status {
+  font-family: Helvetica;
+  font-size: 17px;
+  font-weight: bold;
+  color: green;
+}
+.nonStatus {
+  font-family: Helvetica;
+  font-size: 17px;
+  font-weight: bold;
+  color: red;
+}
