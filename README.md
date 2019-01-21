@@ -1,112 +1,55 @@
-## Solution
+# A Ducks Approach to Redux
+
+Ducks: Redux Reducer Bundles, originally suggested here: https://github.com/erikras/ducks-modular-redux
+
+As we find that when a redux app is being built, we keep needing to add {actionTypes, actions, reducer} tuples for each use case. We have been keeping these in separate files and even separate folders, however 95% of the time, it's only one reducer/actions pair that ever needs their associated actions.
+
+To us, it makes more sense for these pieces to be bundled together in an isolated module that is self contained, and can even be packaged easily into a library. 
 
 
-*Place any details about your implementation and usage of your app here.*
+# Code Sample
 
+This repository is an example of how ducks (as in the last syllable of "redux") structure works. 
 
-
-## General
-
-### How much time?
-
-3 hours
-
-
-### Which technologies?
-
-We prepared this scaffold for you. We believe it comes with everything necessary to complete the tasks. You can use other libaries than the pre-installed ones for API requests, data handling etc., but don't use ready-made components. Write your own components.
-
-We suggest to follow the [Ducks](https://github.com/erikras/ducks-modular-redux) file structure.
-
-
-### Any questions?
-
-Feel free to contact us.
-
-
-## User Stories/Tasks
-
-### 1. As a user, I want to see an overview of all real devices that Sauce Labs offers
-
-Mock endpoints to retrieve data for two different data centers:
+1- We retrieve data from mock endpoints of Sauce Labs:
 - `http://localhost:3004/eu-devices`
 - `http://localhost:3004/us-devices`
 
-An image for each device can be found at:
+2- See which devices are currently available through comparing all devices to available devices from mock endpoints:
+- `http://localhost:3004/eu-devices`
+- `http://localhost:3004/us-devices`
+
+3- Get an image for each device with its descriptorID:
 - `https://d3ty40hendov17.cloudfront.net/device-pictures/{descriptorId}.png`
 
+4- Allow the user to choose between all operating systems, only Android and only iOS.
 
-### 2. As a user, I want to filter devices by operating system.
-
-Allow the user to choose between all operating systems, only Android and only iOS.
-
-
-### 3. Styling
-
-We want to provide our users with simple, clean and pretty interfaces. We believe libraries are not necessary at this stage. Add your own styling.
-
-
-### 4. Testing
-
-Write a unit test for at least one component and one container. Make sure to test at least the following:
-
-- Component renders without crashing
-- All props
-- Callbacks
-
-You may use the pre-installed libraries Chai, Enzyme and Sinon, but feel free to choose what fits your needs.
-
-
-### Bonus 1. As a user, I want to see a loading indicator whenever data is being fetched from the server
-
-Display an animated indicator.
-
-
-### Bonus 2. As a user, I want to see which devices are currently available
-
-Auto-refresh the status of each device.
-
-Mock endpoints to retrieve data for two different data centers:
-
-http://localhost:3004/eu-availability
-http://localhost:3004/us-availability
+5- Write Enzyme unit tests for our function componens.
 
 
 
-## Available Scripts
+# Available Scripts
 
 In the project directory, you can run:
 
-
-### `npm install`
-
+`npm install`
 Installs dependencies.
 
-
-### `npm start`
-
-Runs the app in the development mode.<br>
+`npm start`
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-
-### `npm run server:start`
-
+`npm run server:start`
 Starts the mock server.
 
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
+`npm test`
+Launches the test runner in the interactive watch mode.
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 
-## Available Utilities
+# Available Utilities
 
 ### createConstants
-
 ```js
 import { createConstants } from '@saucelabs/sl-util-redux';
 
@@ -133,7 +76,6 @@ export const STACKTAB = createConstants(NAMESPACE, 'stacktab')(
 ```
 
 ### createApiConstants
-
 ```js
 import { createApiConstants } from '@saucelabs/sl-util-redux';
 
@@ -156,7 +98,6 @@ export const SESSION_GET = createApiConstants(NAMESPACE, 'session_get');
 ```
 
 ### createAction
-
 For more info regarding action structure check [flux standard action](https://github.com/acdlite/flux-standard-action).
 
 ```js
@@ -173,7 +114,6 @@ const openStacktab = createAction(constants.STACKTAB_OPEN);
 ```
 
 ### createErrorAction
-
 ```js
 import { createErrorAction } from '@saucelabs/sl-util-redux';
 
@@ -189,9 +129,6 @@ const removeSessionFailure = createErrorAction(constants.SESSION_REMOVE_FAILURE)
 ```
 
 ### createApiAction
-
-This utility helps only with super simple api calls
-
 ```js
 import { createApiAction, createApiConstants } from '@saucelabs/sl-util-redux';
 
